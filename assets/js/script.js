@@ -14,52 +14,53 @@ $(".saveBtn").on("click", function ()
 //get events from storage to display
 var getDesc = function()
 {
-    $("#8am .description").val(localStorage.getItem("8am"));
-    $("#9am .description").val(localStorage.getItem("9am"));
-    $("#10am .description").val(localStorage.getItem("10am"));
-    $("#11am .description").val(localStorage.getItem("11am"));
-    $("#12pm .description").val(localStorage.getItem("12pm"));
-    $("#1pm .description").val(localStorage.getItem("1pm"));
-    $("#2pm .description").val(localStorage.getItem("2pm"));
-    $("#3pm .description").val(localStorage.getItem("3pm"));
-    $("#4pm .description").val(localStorage.getItem("4pm"));
-    $("#5pm .description").val(localStorage.getItem("5pm"));
-    $("#6pm .description").val(localStorage.getItem("6pm"));
+    $("#8 .description").val(localStorage.getItem("8"));
+    $("#9 .description").val(localStorage.getItem("9"));
+    $("#10 .description").val(localStorage.getItem("10"));
+    $("#11 .description").val(localStorage.getItem("11"));
+    $("#12 .description").val(localStorage.getItem("12"));
+    $("#13 .description").val(localStorage.getItem("13"));
+    $("#14 .description").val(localStorage.getItem("14"));
+    $("#15 .description").val(localStorage.getItem("15"));
+    $("#16 .description").val(localStorage.getItem("16"));
+    $("#17 .description").val(localStorage.getItem("17"));
+    $("#18 .description").val(localStorage.getItem("18"));
+
+    //grab jQ object value from local storage and attach it to the description with the matching id
+    //$(id description).val(localStorage).getItem(id)
 };
 
 //change textarea colors based on time
-var colorTracker = function()
-{
-    var now = moment().hour();  //get the hour
-    console.log(now);
-    
-    $(".time-block").each(function ()   //loop through the time-block class
+var colorTracking = function()
+{   
+    $(".time-block").each(function()   //loop through the time-block class
     {
-        var descTime = parseInt($(this).attr("id").split("hour")); //convert the id to a number to compare to the current time
-
-        if (descTime < now)     //if the hour has passed, add the past class
+        var timeNow = moment().hour();  //get the hour
+        var descTime = parseInt($(this).attr("id")); //convert the id to an interger
+        //console.log(timeNow, descTime);
+        
+        if (descTime < timeNow)     //if the hour has passed, add the past class
         {
-            $(".description").removeClass("future");
-            $(".description").removeClass("present");
-            $(".description").addClass("past");
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
         }
-        else if (descTime === now)      //if the hour is current, add the present class
+        else if (descTime === timeNow)      //if the hour is current, add the present class
         {
-            $(".description").removeClass("past");
-            $(".description").removeClass("future");
-            $(".description").addClass("present");
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
         }
-        else    //if the hour hasn't passed, add the future class
+        else   //if the hour hasn't passed, add the future class
         {
-            $(".description").removeClass("present");
-            $(".description").removeClass("past");
-            $(".description").addClass("future");
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
         }
-
     });
 };
 
 //call functions to run on page load
-colorTracker();
+colorTracking();
 getDesc();
 

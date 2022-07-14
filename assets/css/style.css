@@ -11,8 +11,7 @@ textarea
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: white;
   padding: 10px;
 }
 
@@ -47,9 +46,11 @@ textarea
 
 .hour
 {
+  height: 80px;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  border-right: 3px solid black;
   padding-top: 30px;
 }
 
@@ -57,19 +58,16 @@ textarea
 .past
 {
   background-color: #7e7c7c;
-  color: white;
 }
 
 .present
 {
   background-color: #8e1a3d;
-  color: white;
 }
 
 .future
 {
   background-color: #1a76a0;
-  color: white;
 }
 
 /*--------buttons*/
@@ -78,6 +76,7 @@ textarea
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  height: 79px;
   display: flex;
   justify-content: center;
   align-items: center;
