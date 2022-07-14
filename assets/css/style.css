@@ -56,19 +56,19 @@ textarea
 /*--------color codes*/
 .past
 {
-  background-color: #d3d3d3;
+  background-color: #7e7c7c;
   color: white;
 }
 
 .present
 {
-  background-color: #f8b1ad;
+  background-color: #915366;
   color: white;
 }
 
 .future
 {
-  background-color: #b6e8b6;
+  background-color: #337594;
   color: white;
 }
 
@@ -92,5 +92,5 @@ textarea
 
 @media screen and (max-width: 575px)
 {
-  
+
 }
