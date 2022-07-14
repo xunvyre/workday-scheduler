@@ -3,6 +3,9 @@ Module 5 Challenge 5
 
 ## Purpose
 To have a functioning browser application that demonstrates the ability to use third party APIs.
+Known issues:
+* Mobile compatibility
+* Method.js legacy project
 
 ## Built With
 * HTML
