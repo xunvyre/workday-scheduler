@@ -1,5 +1,3 @@
-var hourlyEvents = {};
-
 //date display
 var currentDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(currentDate);
@@ -32,26 +30,26 @@ var getDesc = function()
 //change textarea colors based on time
 var colorTracker = function()
 {
-    var now = moment().hour();
+    var now = moment().hour();  //get the hour
     console.log(now);
     
-    $(".time-block").each(function ()
+    $(".time-block").each(function ()   //loop through the time-block class
     {
-        var descTime = parseInt($(this).attr("id").split("hour"));
+        var descTime = parseInt($(this).attr("id").split("hour")); //convert the id to a number to compare to the current time
 
-        if (descTime < now)
+        if (descTime < now)     //if the hour has passed, add the past class
         {
             $(".description").removeClass("future");
             $(".description").removeClass("present");
             $(".description").addClass("past");
         }
-        else if (descTime === now)
+        else if (descTime === now)      //if the hour is current, add the present class
         {
             $(".description").removeClass("past");
             $(".description").removeClass("future");
             $(".description").addClass("present");
         }
-        else
+        else    //if the hour hasn't passed, add the future class
         {
             $(".description").removeClass("present");
             $(".description").removeClass("past");
@@ -61,6 +59,7 @@ var colorTracker = function()
     });
 };
 
+//call functions to run on page load
 colorTracker();
 getDesc();
 
