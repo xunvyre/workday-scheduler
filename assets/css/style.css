@@ -1,3 +1,4 @@
+/*--------general styles*/
 body
 {
   font-family: 'Open Sans', sans-serif;
@@ -15,6 +16,7 @@ textarea
   padding: 10px;
 }
 
+/*--------jumbotron*/
 .jumbotron
 {
   text-align: center;
@@ -24,6 +26,7 @@ textarea
   border-bottom: 10px solid black;
 }
 
+/*--------task blocks*/
 .description
 {
   white-space: pre-wrap;
@@ -39,7 +42,7 @@ textarea
 {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 }
 
 .hour
@@ -47,8 +50,10 @@ textarea
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  padding-top: 30px;
 }
 
+/*--------color codes*/
 .past
 {
   background-color: #d3d3d3;
@@ -57,27 +62,35 @@ textarea
 
 .present
 {
-  background-color: #ff6961;
+  background-color: #f8b1ad;
   color: white;
 }
 
 .future
 {
-  background-color: #77dd77;
+  background-color: #b6e8b6;
   color: white;
 }
 
+/*--------buttons*/
 .saveBtn
 {
-  border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
 }
 
 .saveBtn i:hover
 {
-  font-size: 20px;
+  color: black;
   transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 575px)
+{
+
 }
